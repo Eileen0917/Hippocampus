@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		718866D31EB0429100AD11F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D21EB0429100AD11F8 /* AppDelegate.swift */; };
 		718866D51EB0429100AD11F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D41EB0429100AD11F8 /* ViewController.swift */; };
-		718866D81EB0429100AD11F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718866D61EB0429100AD11F8 /* Main.storyboard */; };
 		718866DA1EB0429100AD11F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718866D91EB0429100AD11F8 /* Assets.xcassets */; };
 		718866DD1EB0429100AD11F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718866DB1EB0429100AD11F8 /* LaunchScreen.storyboard */; };
 		718866E81EB0429100AD11F8 /* HippocampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866E71EB0429100AD11F8 /* HippocampusTests.swift */; };
 		718866F31EB0429100AD11F8 /* HippocampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866F21EB0429100AD11F8 /* HippocampusUITests.swift */; };
+		718867021EB04B9F00AD11F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867011EB04B9F00AD11F8 /* HomeViewController.swift */; };
+		718867041EB04BAB00AD11F8 /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867031EB04BAB00AD11F8 /* PlusViewController.swift */; };
+		718867071EB0530000AD11F8 /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867061EB0530000AD11F8 /* GlobalVar.swift */; };
+		7188670A1EB058E600AD11F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718867081EB058E600AD11F8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 		718866CF1EB0429100AD11F8 /* Hippocampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hippocampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718866D21EB0429100AD11F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718866D41EB0429100AD11F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		718866D71EB0429100AD11F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718866D91EB0429100AD11F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718866DC1EB0429100AD11F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718866DE1EB0429100AD11F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		718866EE1EB0429100AD11F8 /* HippocampusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HippocampusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		718866F21EB0429100AD11F8 /* HippocampusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HippocampusUITests.swift; sourceTree = "<group>"; };
 		718866F41EB0429100AD11F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718867011EB04B9F00AD11F8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		718867031EB04BAB00AD11F8 /* PlusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
+		718867061EB0530000AD11F8 /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
+		718867091EB058E600AD11F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +103,12 @@
 		718866D11EB0429100AD11F8 /* Hippocampus */ = {
 			isa = PBXGroup;
 			children = (
+				718867051EB052AE00AD11F8 /* Model */,
+				718867001EB04B8400AD11F8 /* View */,
 				718866D21EB0429100AD11F8 /* AppDelegate.swift */,
 				718866D41EB0429100AD11F8 /* ViewController.swift */,
-				718866D61EB0429100AD11F8 /* Main.storyboard */,
 				718866D91EB0429100AD11F8 /* Assets.xcassets */,
+				718867081EB058E600AD11F8 /* Main.storyboard */,
 				718866DB1EB0429100AD11F8 /* LaunchScreen.storyboard */,
 				718866DE1EB0429100AD11F8 /* Info.plist */,
 			);
@@ -123,6 +131,23 @@
 				718866F41EB0429100AD11F8 /* Info.plist */,
 			);
 			path = HippocampusUITests;
+			sourceTree = "<group>";
+		};
+		718867001EB04B8400AD11F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				718867011EB04B9F00AD11F8 /* HomeViewController.swift */,
+				718867031EB04BAB00AD11F8 /* PlusViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		718867051EB052AE00AD11F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				718867061EB0530000AD11F8 /* GlobalVar.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7188670A1EB058E600AD11F8 /* Main.storyboard in Resources */,
 				718866DD1EB0429100AD11F8 /* LaunchScreen.storyboard in Resources */,
 				718866DA1EB0429100AD11F8 /* Assets.xcassets in Resources */,
-				718866D81EB0429100AD11F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718867071EB0530000AD11F8 /* GlobalVar.swift in Sources */,
 				718866D51EB0429100AD11F8 /* ViewController.swift in Sources */,
 				718866D31EB0429100AD11F8 /* AppDelegate.swift in Sources */,
+				718867041EB04BAB00AD11F8 /* PlusViewController.swift in Sources */,
+				718867021EB04B9F00AD11F8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,20 +324,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		718866D61EB0429100AD11F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				718866D71EB0429100AD11F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		718866DB1EB0429100AD11F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				718866DC1EB0429100AD11F8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		718867081EB058E600AD11F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				718867091EB058E600AD11F8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
