@@ -173,36 +173,48 @@
                                 <rect key="frame" x="0.0" y="558" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Location"/>
+                                <connections>
+                                    <action selector="BtnLocation:" destination="wog-7J-icO" eventType="touchUpInside" id="Bqp-9l-ewG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8u-9XV">
                                 <rect key="frame" x="78" y="558" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weather"/>
+                                <connections>
+                                    <action selector="BtnWeather:" destination="wog-7J-icO" eventType="touchUpInside" id="SOf-Wv-Uub"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2O-bc-KB2">
                                 <rect key="frame" x="156" y="558" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Picture"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueF-3K-wed">
-                                <rect key="frame" x="234" y="558" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Date"/>
                                 <connections>
-                                    <action selector="BtnDate:" destination="wog-7J-icO" eventType="touchUpInside" id="wyw-py-sFb"/>
+                                    <action selector="BtnPicture:" destination="wog-7J-icO" eventType="touchUpInside" id="VKq-5k-WdP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlf-hQ-mMD">
                                 <rect key="frame" x="305" y="558" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tag"/>
+                                <connections>
+                                    <action selector="BtnTag:" destination="wog-7J-icO" eventType="touchUpInside" id="Z8n-an-AKa"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rC-oS-zwj">
+                                <rect key="frame" x="234" y="558" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="+" id="4Vm-6G-eG6" userLabel="Item 3"/>
                     <connections>
-                        <outlet property="EnterDairy" destination="Eq0-Zw-aDF" id="f9v-hL-UC5"/>
+                        <outlet property="DateBtn" destination="7rC-oS-zwj" id="uga-gO-sNs"/>
+                        <outlet property="EnterDairy" destination="Eq0-Zw-aDF" id="D2s-dV-pnP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTe-dt-pxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

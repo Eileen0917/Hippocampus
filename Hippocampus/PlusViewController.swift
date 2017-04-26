@@ -9,60 +9,71 @@
 import UIKit
 
 class PlusViewController: UIViewController {
+    
+   
 
-    @IBOutlet weak var DatePicker: UIDatePicker!
-    @IBAction func BtnDate(_ sender: AnyObject) {
-        
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        
-        EnterDairy.inputView = datePickerView
-        
-        datePickerView.addTarget(self, action: #selector(PlusViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
-        
-//        let date = DatePicker.date
-//        Dairy_Date = date
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-//        EnterDairy.text = dateFormatter.string(from: date)
-        
-    }
-    
-    func datePickerValueChanged(sender:UIDatePicker) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        EnterDairy.text = dateFormatter.string(from: sender.date)
-        Dairy_Date = sender.date
-        
-        
-    }
-    
-    
-    
+
     @IBOutlet weak var EnterDairy: UITextView!
+    
+    @IBOutlet weak var DateBtn: UITextField!
+    
+    //let date = DatePicker.date
+    let DatePicker = UIDatePicker()
+    
+    let dateFormatter = DateFormatter()
+    
+    func createDate(){
+        
+        DatePicker.datePickerMode = .dateAndTime
+        DatePicker.addTarget(self, action: #selector(updateDateForTextField(isDoneBtnClicked:)), for: .valueChanged)
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.isTranslucent = true
+        
+        let donebtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
+        let cancelbtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelClicked))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([cancelbtn, flexible, donebtn], animated: false)
+        
+        DateBtn.inputAccessoryView = toolBar
+        DateBtn.inputView = DatePicker
+    }
+    
+    func doneClicked() {
+        updateDateForTextField(isDoneBtnClicked: true)
+        self.view.endEditing(true)
+        
+    }
+    
+    func cancelClicked() {
+        updateDateForTextField(isDoneBtnClicked: false)
+        self.view.endEditing(true)
+        
+    }
+    
+    func updateDateForTextField(isDoneBtnClicked: Bool) {
+       
+        EnterDairy.text = dateFormatter.string(from: DatePicker.date)
+        Dairy_Date = DatePicker.date
+
+    }
+
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        createDate()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
