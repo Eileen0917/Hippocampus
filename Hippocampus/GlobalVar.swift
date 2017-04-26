@@ -8,5 +8,18 @@
 
 import Foundation
 
-var Dairy_Date = Date()
+
+// diary var
+
+//class diary {
+    
+    var Diary_Date = Date()
+    var Diary_Comment = String()
+    var Diary_Location = String()
+    var Diary_Weather = String()
+    var Diary_Tag = String()
+    //var Dairy_Image = UIImageView
+    
+//}
+
 
