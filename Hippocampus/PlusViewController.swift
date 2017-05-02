@@ -13,7 +13,6 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let toolBar = UIToolbar()
     
-   
     
 //////////////////////////////////////////////////////
     

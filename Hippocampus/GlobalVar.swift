@@ -18,7 +18,7 @@ import Foundation
     var Diary_Location = String()
     var Diary_Weather = String()
     var Diary_Tag = String()
-    //var Dairy_Image = UIImageView
+    //var Dairy_Image = Image()
     
 //}
 
