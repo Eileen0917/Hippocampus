@@ -101,8 +101,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func createWeather(){
         
-        weatherPicker.delegate = self as? UIPickerViewDelegate
-        weatherPicker.dataSource = self as? UIPickerViewDataSource
+        weatherPicker.delegate = self
+        weatherPicker.dataSource = self
         weatherbtn.tag = 100
         
         let donebtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneWClicked))
@@ -130,7 +130,7 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func updateWeatherForTextField(isDoneBtnClicked: Bool) {
         
-        //weatherbtn.text = dateFormatter.string(from: DatePicker.date)
+        weatherbtn.text = weatherbtn.text
         //Diary_Date = DatePicker.date
     }
     
@@ -158,6 +158,28 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
  
 //////////////////////////////////////////////////////
     
+    //tag
+    
+    @IBOutlet weak var tagBtn: UITextField!
+    
+    var tag = [String]()
+    
+    func createTag(){
+        
+        if( !tag.contains(tagBtn.text!) ){
+            tag.append(tagBtn.text!)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+//////////////////////////////////////////////////////
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -165,6 +187,7 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         createDate()
         
         createWeather()
+        createTag()
         
     }
 
