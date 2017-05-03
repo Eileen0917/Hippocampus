@@ -179,6 +179,28 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
 //////////////////////////////////////////////////////
+    
+    //submit
+    
+    @IBAction func btnSave(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func btnCancel(_ sender: AnyObject) {
+        myImage.image = nil
+        EnterDairy.text = ""
+        DateBtn.text = ""
+        weatherbtn.text = ""
+        
+        //location
+        //tag
+    }
+    
+    
+
+    
+    
+//////////////////////////////////////////////////////
 
     override func viewDidLoad() {
         super.viewDidLoad()
