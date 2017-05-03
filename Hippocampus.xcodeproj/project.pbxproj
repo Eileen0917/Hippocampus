@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D50CD248496B9655CB22047 /* Pods_Hippocampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054FDE4E18FCA52E558626E0 /* Pods_Hippocampus.framework */; };
 		7119E5711EB703DC000F2893 /* diary_data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7119E56F1EB703DC000F2893 /* diary_data.xcdatamodeld */; };
 		7119E57E1EB828E4000F2893 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119E57A1EB828E4000F2893 /* UserData+CoreDataClass.swift */; };
 		7119E57F1EB828E4000F2893 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119E57B1EB828E4000F2893 /* UserData+CoreDataProperties.swift */; };
 		7119E5801EB828E4000F2893 /* Diary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119E57C1EB828E4000F2893 /* Diary+CoreDataClass.swift */; };
 		7119E5811EB828E4000F2893 /* Diary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119E57D1EB828E4000F2893 /* Diary+CoreDataProperties.swift */; };
+		712BAA911EB83F1E0092932E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA901EB83F1E0092932E /* CalendarViewController.swift */; };
+		712BAA931EB83F400092932E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA921EB83F400092932E /* MapViewController.swift */; };
+		712BAA951EB83F580092932E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA941EB83F580092932E /* SettingsViewController.swift */; };
+		712BAA971EB844AF0092932E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA961EB844AF0092932E /* CalendarCell.swift */; };
 		718866D31EB0429100AD11F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D21EB0429100AD11F8 /* AppDelegate.swift */; };
 		718866D51EB0429100AD11F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D41EB0429100AD11F8 /* ViewController.swift */; };
 		718866DA1EB0429100AD11F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718866D91EB0429100AD11F8 /* Assets.xcassets */; };
 		718866DD1EB0429100AD11F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718866DB1EB0429100AD11F8 /* LaunchScreen.storyboard */; };
 		718866E81EB0429100AD11F8 /* HippocampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866E71EB0429100AD11F8 /* HippocampusTests.swift */; };
 		718866F31EB0429100AD11F8 /* HippocampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866F21EB0429100AD11F8 /* HippocampusUITests.swift */; };
-		718867021EB04B9F00AD11F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867011EB04B9F00AD11F8 /* HomeViewController.swift */; };
+		718867021EB04B9F00AD11F8 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867011EB04B9F00AD11F8 /* TagViewController.swift */; };
 		718867041EB04BAB00AD11F8 /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867031EB04BAB00AD11F8 /* PlusViewController.swift */; };
 		718867071EB0530000AD11F8 /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718867061EB0530000AD11F8 /* GlobalVar.swift */; };
 		7188670A1EB058E600AD11F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718867081EB058E600AD11F8 /* Main.storyboard */; };
@@ -42,11 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054FDE4E18FCA52E558626E0 /* Pods_Hippocampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hippocampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47E6228662497DA245DC1A14 /* Pods-Hippocampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hippocampus.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Hippocampus/Pods-Hippocampus.release.xcconfig"; sourceTree = "<group>"; };
 		7119E5701EB703DC000F2893 /* diary_data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = diary_data.xcdatamodel; sourceTree = "<group>"; };
 		7119E57A1EB828E4000F2893 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataClass.swift"; path = "Hippocampus_CoreData/UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7119E57B1EB828E4000F2893 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataProperties.swift"; path = "Hippocampus_CoreData/UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7119E57C1EB828E4000F2893 /* Diary+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Diary+CoreDataClass.swift"; path = "Hippocampus_CoreData/Diary+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7119E57D1EB828E4000F2893 /* Diary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Diary+CoreDataProperties.swift"; path = "Hippocampus_CoreData/Diary+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		712BAA901EB83F1E0092932E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		712BAA921EB83F400092932E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		712BAA941EB83F580092932E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../../Downloads/SettingsViewController.swift; sourceTree = "<group>"; };
+		712BAA961EB844AF0092932E /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		718866CF1EB0429100AD11F8 /* Hippocampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hippocampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718866D21EB0429100AD11F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718866D41EB0429100AD11F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +70,11 @@
 		718866EE1EB0429100AD11F8 /* HippocampusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HippocampusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		718866F21EB0429100AD11F8 /* HippocampusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HippocampusUITests.swift; sourceTree = "<group>"; };
 		718866F41EB0429100AD11F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		718867011EB04B9F00AD11F8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		718867011EB04B9F00AD11F8 /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		718867031EB04BAB00AD11F8 /* PlusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
 		718867061EB0530000AD11F8 /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 		718867091EB058E600AD11F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77810C145E98F00287DD081F /* Pods-Hippocampus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hippocampus.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Hippocampus/Pods-Hippocampus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D50CD248496B9655CB22047 /* Pods_Hippocampus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +114,8 @@
 				718866E61EB0429100AD11F8 /* HippocampusTests */,
 				718866F11EB0429100AD11F8 /* HippocampusUITests */,
 				718866D01EB0429100AD11F8 /* Products */,
+				BCF2BFC24B5E6EF4773277DB /* Pods */,
+				AE54465ED1C73077FD333701 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +141,7 @@
 				718866DB1EB0429100AD11F8 /* LaunchScreen.storyboard */,
 				718866DE1EB0429100AD11F8 /* Info.plist */,
 				7119E56F1EB703DC000F2893 /* diary_data.xcdatamodeld */,
+				712BAA961EB844AF0092932E /* CalendarCell.swift */,
 			);
 			path = Hippocampus;
 			sourceTree = "<group>";
@@ -151,8 +167,11 @@
 		718867001EB04B8400AD11F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				718867011EB04B9F00AD11F8 /* HomeViewController.swift */,
+				718867011EB04B9F00AD11F8 /* TagViewController.swift */,
 				718867031EB04BAB00AD11F8 /* PlusViewController.swift */,
+				712BAA901EB83F1E0092932E /* CalendarViewController.swift */,
+				712BAA921EB83F400092932E /* MapViewController.swift */,
+				712BAA941EB83F580092932E /* SettingsViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -165,6 +184,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		AE54465ED1C73077FD333701 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				054FDE4E18FCA52E558626E0 /* Pods_Hippocampus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCF2BFC24B5E6EF4773277DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77810C145E98F00287DD081F /* Pods-Hippocampus.debug.xcconfig */,
+				47E6228662497DA245DC1A14 /* Pods-Hippocampus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 718866F71EB0429100AD11F8 /* Build configuration list for PBXNativeTarget "Hippocampus" */;
 			buildPhases = (
+				DE34EC79980A25D9A18AF874 /* [CP] Check Pods Manifest.lock */,
 				718866CB1EB0429100AD11F8 /* Sources */,
 				718866CC1EB0429100AD11F8 /* Frameworks */,
 				718866CD1EB0429100AD11F8 /* Resources */,
+				4741165BA0968CCAE0EE6FA2 /* [CP] Embed Pods Frameworks */,
+				DA87EC4FEB33484B0389BBED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,20 +333,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4741165BA0968CCAE0EE6FA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Hippocampus/Pods-Hippocampus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA87EC4FEB33484B0389BBED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Hippocampus/Pods-Hippocampus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE34EC79980A25D9A18AF874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		718866CB1EB0429100AD11F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7119E5801EB828E4000F2893 /* Diary+CoreDataClass.swift in Sources */,
+				712BAA971EB844AF0092932E /* CalendarCell.swift in Sources */,
 				7119E57F1EB828E4000F2893 /* UserData+CoreDataProperties.swift in Sources */,
+				712BAA911EB83F1E0092932E /* CalendarViewController.swift in Sources */,
 				718867071EB0530000AD11F8 /* GlobalVar.swift in Sources */,
 				718866D51EB0429100AD11F8 /* ViewController.swift in Sources */,
 				718866D31EB0429100AD11F8 /* AppDelegate.swift in Sources */,
 				7119E5811EB828E4000F2893 /* Diary+CoreDataProperties.swift in Sources */,
+				712BAA931EB83F400092932E /* MapViewController.swift in Sources */,
 				7119E57E1EB828E4000F2893 /* UserData+CoreDataClass.swift in Sources */,
 				718867041EB04BAB00AD11F8 /* PlusViewController.swift in Sources */,
-				718867021EB04B9F00AD11F8 /* HomeViewController.swift in Sources */,
+				712BAA951EB83F580092932E /* SettingsViewController.swift in Sources */,
+				718867021EB04B9F00AD11F8 /* TagViewController.swift in Sources */,
 				7119E5711EB703DC000F2893 /* diary_data.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +549,7 @@
 		};
 		718866F81EB0429100AD11F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77810C145E98F00287DD081F /* Pods-Hippocampus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hippocampus/Info.plist;
@@ -470,6 +562,7 @@
 		};
 		718866F91EB0429100AD11F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E6228662497DA245DC1A14 /* Pods-Hippocampus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hippocampus/Info.plist;

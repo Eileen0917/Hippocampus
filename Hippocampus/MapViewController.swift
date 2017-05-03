@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  Hippocampus
 //
-//  Created by Eileen on 2017/4/26.
+//  Created by Eileen on 2017/5/2.
 //  Copyright © 2017年 Eileen. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
