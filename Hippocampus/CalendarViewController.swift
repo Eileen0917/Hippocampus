@@ -32,6 +32,8 @@ class CalendarViewController: UIViewController {
     
     func setUpCalendarView(){
         
+        let myDate = Date()
+        
         //set up label spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
@@ -39,6 +41,8 @@ class CalendarViewController: UIViewController {
         calendarView.visibleDates{ visibileDates in
             self.setUpViewOfCalendar(from: visibileDates)
         }
+        
+        calendarView.scrollToDate(myDate)
     }
     
     func handleCellSelected(view: JTAppleCell?, cellState: CellState){
@@ -85,6 +89,7 @@ class CalendarViewController: UIViewController {
         month.text = formatter.string(from: date)
         
     }
+    
 
 
 }
@@ -94,12 +99,14 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: JTAppleCalendarViewDataSource{
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         
+        //let date = Date()
+        
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2017-01-01")!
-        let endDate = formatter.date(from: "2017-12-31")!
+        let startDate = formatter.date(from: "1995-01-01")!
+        let endDate = formatter.date(from: "2025-12-31")!
         
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
