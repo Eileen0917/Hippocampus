@@ -384,6 +384,7 @@
                     <connections>
                         <outlet property="DateBtn" destination="7rC-oS-zwj" id="uga-gO-sNs"/>
                         <outlet property="EnterDairy" destination="Eq0-Zw-aDF" id="D2s-dV-pnP"/>
+                        <outlet property="locationBtn" destination="WWQ-a1-oeN" id="KzJ-cC-g0X"/>
                         <outlet property="myImage" destination="dws-op-oGW" id="dNB-9O-V5g"/>
                         <outlet property="tagBtn" destination="Zqb-By-fmm" id="YJk-4m-5Ig"/>
                         <outlet property="weatherbtn" destination="bMR-3w-qQm" id="56O-an-Ozf"/>

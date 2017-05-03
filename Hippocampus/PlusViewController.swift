@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UIPickerViewDelegate, UIPickerViewDataSource  {
     
@@ -172,8 +173,19 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     
+//////////////////////////////////////////////////////
     
     
+    @IBOutlet weak var locationBtn: UITextField!
+    var location = [String]()
+    
+    
+    func createLocation(){
+        
+        if (!location.contains(locationBtn.text!)){
+            location.append(locationBtn.text!)
+        }
+    }
     
     
     
@@ -184,16 +196,28 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func btnSave(_ sender: AnyObject) {
         
+        
+//        let diary = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: viewContext) as! Diary
+//        
+//        diary.date = dateFormatter.date(from: DateBtn.text!)! as NSDate
+//        //diary.image = myImage.image as NSData
+//        diary.comment = EnterDairy.text
+//        diary.location = locationBtn.text
+//        diary.weather = weatherbtn.text
+//        diary.tag = tagBtn.text
+//        
+//        app.saveContext()
+        
     }
     
     @IBAction func btnCancel(_ sender: AnyObject) {
+        
         myImage.image = nil
         EnterDairy.text = ""
         DateBtn.text = ""
         weatherbtn.text = ""
-        
-        //location
-        //tag
+        locationBtn.text = ""
+        tagBtn.text = ""
     }
     
     
@@ -202,14 +226,22 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
 //////////////////////////////////////////////////////
 
+    let app = UIApplication.shared.delegate as! AppDelegate
+    var viewContext: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewContext = app.persistentContainer.viewContext
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         createDate()
         
         createWeather()
+        
         createTag()
+        
+        createLocation()
         
     }
 
