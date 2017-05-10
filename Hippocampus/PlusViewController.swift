@@ -14,6 +14,34 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let toolBar = UIToolbar()
     
+    let app = UIApplication.shared.delegate as! AppDelegate
+    var viewContext: NSManagedObjectContext!
+
+    
+    
+//////////////////////////////////////////////////////
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewContext = app.persistentContainer.viewContext
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        createDate()
+        
+        createWeather()
+        
+        createTag()
+        
+        createLocation()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    
     
 //////////////////////////////////////////////////////
     
@@ -167,8 +195,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func createTag(){
         
-        if( !tag.contains(tagBtn.text!) ){
-            tag.append(tagBtn.text!)
+        if( !Diary_Tag.contains(tagBtn.text!) ){
+            Diary_Tag.append(tagBtn.text!)
         }
     }
     
@@ -182,8 +210,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func createLocation(){
         
-        if (!location.contains(locationBtn.text!)){
-            location.append(locationBtn.text!)
+        if (!Diary_Location.contains(locationBtn.text!)){
+            Diary_Location.append(locationBtn.text!)
         }
     }
     
@@ -197,16 +225,36 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func btnSave(_ sender: AnyObject) {
         
         
+        Diary_Date = (dateFormatter.date(from: DateBtn.text!)! as NSDate) as Date
+        Diary_Comment = EnterDairy.text!
+        Diary_Weather = weatherbtn.text!
+
+
+        
+        
 //        let diary = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: viewContext) as! Diary
 //        
 //        diary.date = dateFormatter.date(from: DateBtn.text!)! as NSDate
-//        //diary.image = myImage.image as NSData
+//        //diary.image = myImage.image
 //        diary.comment = EnterDairy.text
 //        diary.location = locationBtn.text
 //        diary.weather = weatherbtn.text
 //        diary.tag = tagBtn.text
 //        
-//        app.saveContext()
+//        //app.saveContext()
+//        
+//        do {
+//            //真正儲存
+//            try viewContext.save()
+//        }catch{
+//            fatalError("Failure to save context: \(error)")
+//        }
+
+        
+        
+        
+        
+        
         
     }
     
@@ -220,34 +268,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         tagBtn.text = ""
     }
     
-    
 
-    
-    
-//////////////////////////////////////////////////////
 
-    let app = UIApplication.shared.delegate as! AppDelegate
-    var viewContext: NSManagedObjectContext!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        viewContext = app.persistentContainer.viewContext
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        createDate()
-        
-        createWeather()
-        
-        createTag()
-        
-        createLocation()
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+   
 
 }

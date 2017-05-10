@@ -17,6 +17,10 @@
 		712BAA931EB83F400092932E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA921EB83F400092932E /* MapViewController.swift */; };
 		712BAA951EB83F580092932E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA941EB83F580092932E /* SettingsViewController.swift */; };
 		712BAA971EB844AF0092932E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA961EB844AF0092932E /* CalendarCell.swift */; };
+		712BAA9B1EC30CEF0092932E /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA9A1EC30CEF0092932E /* TagTableViewCell.swift */; };
+		712BAA9E1EC30D920092932E /* selectTagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA9D1EC30D920092932E /* selectTagTableViewController.swift */; };
+		712BAAA01EC30DAA0092932E /* selectTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAA9F1EC30DAA0092932E /* selectTagTableViewCell.swift */; };
+		712BAAA21EC30DC30092932E /* diaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BAAA11EC30DC30092932E /* diaryViewController.swift */; };
 		718866D31EB0429100AD11F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D21EB0429100AD11F8 /* AppDelegate.swift */; };
 		718866D51EB0429100AD11F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718866D41EB0429100AD11F8 /* ViewController.swift */; };
 		718866DA1EB0429100AD11F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718866D91EB0429100AD11F8 /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 		712BAA921EB83F400092932E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		712BAA941EB83F580092932E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../../Downloads/SettingsViewController.swift; sourceTree = "<group>"; };
 		712BAA961EB844AF0092932E /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		712BAA9A1EC30CEF0092932E /* TagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		712BAA9D1EC30D920092932E /* selectTagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectTagTableViewController.swift; sourceTree = "<group>"; };
+		712BAA9F1EC30DAA0092932E /* selectTagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectTagTableViewCell.swift; sourceTree = "<group>"; };
+		712BAAA11EC30DC30092932E /* diaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController.swift; sourceTree = "<group>"; };
 		718866CF1EB0429100AD11F8 /* Hippocampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hippocampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718866D21EB0429100AD11F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718866D41EB0429100AD11F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		712BAA9C1EC30D630092932E /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				718867011EB04B9F00AD11F8 /* TagViewController.swift */,
+				712BAA9A1EC30CEF0092932E /* TagTableViewCell.swift */,
+				712BAA9D1EC30D920092932E /* selectTagTableViewController.swift */,
+				712BAA9F1EC30DAA0092932E /* selectTagTableViewCell.swift */,
+			);
+			name = Tag;
+			sourceTree = "<group>";
+		};
 		718866C61EB0429100AD11F8 = {
 			isa = PBXGroup;
 			children = (
@@ -167,11 +186,12 @@
 		718867001EB04B8400AD11F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				718867011EB04B9F00AD11F8 /* TagViewController.swift */,
+				712BAA9C1EC30D630092932E /* Tag */,
 				718867031EB04BAB00AD11F8 /* PlusViewController.swift */,
 				712BAA901EB83F1E0092932E /* CalendarViewController.swift */,
 				712BAA921EB83F400092932E /* MapViewController.swift */,
 				712BAA941EB83F580092932E /* SettingsViewController.swift */,
+				712BAAA11EC30DC30092932E /* diaryViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -386,8 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712BAAA21EC30DC30092932E /* diaryViewController.swift in Sources */,
+				712BAA9E1EC30D920092932E /* selectTagTableViewController.swift in Sources */,
 				7119E5801EB828E4000F2893 /* Diary+CoreDataClass.swift in Sources */,
 				712BAA971EB844AF0092932E /* CalendarCell.swift in Sources */,
+				712BAAA01EC30DAA0092932E /* selectTagTableViewCell.swift in Sources */,
 				7119E57F1EB828E4000F2893 /* UserData+CoreDataProperties.swift in Sources */,
 				712BAA911EB83F1E0092932E /* CalendarViewController.swift in Sources */,
 				718867071EB0530000AD11F8 /* GlobalVar.swift in Sources */,
@@ -397,6 +420,7 @@
 				712BAA931EB83F400092932E /* MapViewController.swift in Sources */,
 				7119E57E1EB828E4000F2893 /* UserData+CoreDataClass.swift in Sources */,
 				718867041EB04BAB00AD11F8 /* PlusViewController.swift in Sources */,
+				712BAA9B1EC30CEF0092932E /* TagTableViewCell.swift in Sources */,
 				712BAA951EB83F580092932E /* SettingsViewController.swift in Sources */,
 				718867021EB04B9F00AD11F8 /* TagViewController.swift in Sources */,
 				7119E5711EB703DC000F2893 /* diary_data.xcdatamodeld in Sources */,
