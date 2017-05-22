@@ -295,6 +295,25 @@
             </objects>
             <point key="canvasLocation" x="1319" y="1896"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="PcP-WC-89c">
+            <objects>
+                <viewController id="HKq-hl-4jl" customClass="MapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lb9-Fp-wFT"/>
+                        <viewControllerLayoutGuide type="bottom" id="r5y-p3-SrT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IIc-9E-J5N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="470-4d-FsT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4e-PY-byN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3665" y="1227"/>
+        </scene>
         <!--Diary View Controller-->
         <scene sceneID="xSg-Sa-Zv3">
             <objects>
@@ -373,7 +392,7 @@
                         <segue destination="Lh2-G4-nNo" kind="relationship" relationship="viewControllers" id="scs-pt-suX"/>
                         <segue destination="wog-7J-icO" kind="relationship" relationship="viewControllers" id="hVC-HG-yUi"/>
                         <segue destination="jYg-oM-bdK" kind="relationship" relationship="viewControllers" id="pvd-7k-aFx"/>
-                        <segue destination="SPc-DW-ZVP" kind="relationship" relationship="viewControllers" id="WI1-8E-jT2"/>
+                        <segue destination="HKq-hl-4jl" kind="relationship" relationship="viewControllers" id="Xv8-Pb-4uZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT6-7K-byd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -384,7 +403,7 @@
         <scene sceneID="vhn-om-zNR">
             <objects>
                 <navigationController id="1pf-Y6-MUh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RkJ-tY-aGb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RkJ-tY-aGb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.40610730351534946" green="0.73693289974060916" blue="0.45430996727855438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -438,17 +457,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-LA-lsB">
-                                <rect key="frame" x="0.0" y="588" width="188" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.54436038840000001" green="0.54399020649999996" blue="0.53151692890000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnSave:" destination="wog-7J-icO" eventType="touchUpInside" id="Dct-Ej-BBB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sli-RK-xYL">
                                 <rect key="frame" x="187" y="588" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -481,6 +489,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-6f-z1M">
+                                <rect key="frame" x="0.0" y="588" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.54436038840000001" green="0.54399020649999996" blue="0.53151692890000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSave:" destination="wog-7J-icO" eventType="touchUpInside" id="q4y-bc-Cym"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -498,29 +517,10 @@
             </objects>
             <point key="canvasLocation" x="2088.8000000000002" y="1229.2353823088456"/>
         </scene>
-        <!--Setting-->
-        <scene sceneID="msk-61-OX0">
-            <objects>
-                <viewController id="SPc-DW-ZVP" customClass="SettingsViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VkJ-FM-RAR"/>
-                        <viewControllerLayoutGuide type="bottom" id="dZH-Es-bos"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OXh-uK-KRy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="ic_perm_identity" id="NBN-mX-iJZ" userLabel="Item 5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9h8-iA-CbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3604" y="1230"/>
-        </scene>
         <!--Map-->
         <scene sceneID="WY2-dM-RQA">
             <objects>
-                <viewController id="jYg-oM-bdK" customClass="MapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jYg-oM-bdK" customClass="AppleMapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rGL-UI-t1i"/>
                         <viewControllerLayoutGuide type="bottom" id="uOb-MX-cTT"/>
@@ -528,38 +528,27 @@
                     <view key="view" contentMode="scaleToFill" id="CNy-xq-QW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="acF-y3-zmE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="560"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="ic_pin_drop" id="noQ-e4-M0p" userLabel="Item 4"/>
+                    <connections>
+                        <outlet property="mapView" destination="acF-y3-zmE" id="hbx-eo-p6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZm-NF-9Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2825" y="1229"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="b6c-GU-uNY">
-            <objects>
-                <viewController id="RpP-vr-GhK" customClass="SettingsViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iF8-vj-FWo"/>
-                        <viewControllerLayoutGuide type="bottom" id="fqH-Dd-PI7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XdV-BX-FdX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="ic_perm_identity" id="D3s-vq-cr6" userLabel="Item 5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="72v-3c-ZRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3604" y="1230"/>
+            <point key="canvasLocation" x="2824.8000000000002" y="1228.3358320839582"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_add_circle_outline" width="24" height="24"/>
         <image name="ic_local_offer" width="24" height="24"/>
-        <image name="ic_perm_identity" width="24" height="24"/>
         <image name="ic_pin_drop" width="24" height="24"/>
         <image name="ic_today" width="24" height="24"/>
     </resources>

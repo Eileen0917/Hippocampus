@@ -13,7 +13,7 @@ import Foundation
 
 //class diary {
     
-    var Diary_Date = Date()
+    var Diary_Date = String()
     var Diary_Comment = String()
     var Diary_Location = [String()]
     var Diary_Weather = String()

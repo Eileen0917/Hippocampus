@@ -7,15 +7,17 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
+import FirebaseAuth
 
-class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UIPickerViewDelegate, UIPickerViewDataSource  {
+var ref: FIRDatabaseReference!
+
+class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UIPickerViewDelegate, UIPickerViewDataSource  {
     
     
     let toolBar = UIToolbar()
     
-    let app = UIApplication.shared.delegate as! AppDelegate
-    var viewContext: NSManagedObjectContext!
+    
 
     
     
@@ -24,9 +26,12 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewContext = app.persistentContainer.viewContext
+        self.EnterDairy.delegate = self
+        
+        ref = FIRDatabase.database().reference().child("diary")
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
         createDate()
         
         createWeather()
@@ -35,10 +40,33 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         createLocation()
         
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    // 設定delegate 為self後，可以自行增加delegate protocol
+    
+    // 開始進入編輯狀態
+    func textFieldDidBeginEditing(textField: UITextField){
+        
+    }
+    
+    // 可能進入結束編輯狀態
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        return true
+    }
+    
+    // 結束編輯狀態(意指完成輸入或離開焦點)
+    func textFieldDidEndEditing(textField: UITextField) {
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
     }
 
     
@@ -89,6 +117,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         DateBtn.text = dateFormatter.string(from: DatePicker.date)
         //Diary_Date = DatePicker.date
     }
+    
+
 
 //////////////////////////////////////////////////////
     
@@ -143,6 +173,7 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         weatherbtn.inputAccessoryView = toolBar
         weatherbtn.inputView = weatherPicker
         
+        
     }
     
     func doneWClicked() {
@@ -160,6 +191,7 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func updateWeatherForTextField(isDoneBtnClicked: Bool) {
         
         weatherbtn.text = weatherbtn.text
+        print("WeatherBtn is good!!" + weatherbtn.text!)
         //Diary_Date = DatePicker.date
     }
     
@@ -181,7 +213,10 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // UIPickerView 改變選擇後執行的動作
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         weatherbtn.text = weather[row]
+        print("WeatherBtn is good!!" + weatherbtn.text!)
     }
+    
+    
 
     
  
@@ -204,6 +239,8 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //////////////////////////////////////////////////////
     
     
+    //location
+    
     @IBOutlet weak var locationBtn: UITextField!
     var location = [String]()
     
@@ -222,44 +259,61 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //submit
     
-    @IBAction func btnSave(_ sender: AnyObject) {
-        
-        
-        Diary_Date = (dateFormatter.date(from: DateBtn.text!)! as NSDate) as Date
-        Diary_Comment = EnterDairy.text!
-        Diary_Weather = weatherbtn.text!
 
-
-        
-        
-//        let diary = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: viewContext) as! Diary
-//        
-//        diary.date = dateFormatter.date(from: DateBtn.text!)! as NSDate
-//        //diary.image = myImage.image
-//        diary.comment = EnterDairy.text
-//        diary.location = locationBtn.text
-//        diary.weather = weatherbtn.text
-//        diary.tag = tagBtn.text
-//        
-//        //app.saveContext()
-//        
-//        do {
-//            //真正儲存
-//            try viewContext.save()
-//        }catch{
-//            fatalError("Failure to save context: \(error)")
-//        }
-
-        
-        
-        
-        
-        
-        
-    }
     
     @IBAction func btnCancel(_ sender: AnyObject) {
         
+        clear()
+    }
+    
+
+    @IBAction func btnSave(_ sender: UIButton) {
+        
+        data()
+        simpleHint()
+        clear()
+        
+    }
+    
+    func data(){
+        let key = ref.childByAutoId().key
+        let diary: [String: Any] = [
+            "content":EnterDairy.text,
+            "date":DateBtn.text!,
+            //"image":myImage.image!,
+            "location":locationBtn.text!,
+            "weather":weatherbtn.text!,
+            "tag":tagBtn.text!
+        ]
+        ref.child(key).setValue(diary)
+        
+    }
+    
+    func simpleHint() {
+        // 建立一個提示框
+        let alertController = UIAlertController(
+            title: "Confirm",
+            message: "Your Diary is stored.",
+            preferredStyle: .alert)
+        
+        // 建立[確認]按鈕
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: {
+                (action: UIAlertAction!) -> Void in
+                print("按下確認後，閉包裡的動作")
+        })
+        alertController.addAction(okAction)
+        
+        // 顯示提示框
+        self.present(
+            alertController,
+            animated: true,
+            completion: nil)
+    }
+    
+    func clear(){
         myImage.image = nil
         EnterDairy.text = ""
         DateBtn.text = ""
@@ -267,9 +321,6 @@ class PlusViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         locationBtn.text = ""
         tagBtn.text = ""
     }
-    
-
-
    
 
 }
