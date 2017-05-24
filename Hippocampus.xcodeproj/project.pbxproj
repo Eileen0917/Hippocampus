@@ -187,8 +187,8 @@
 				712BAAAD1EC5B74F0092932E /* Calendar */,
 				712BAA9C1EC30D630092932E /* Tag */,
 				718867031EB04BAB00AD11F8 /* PlusViewController.swift */,
-				712BAA921EB83F400092932E /* MapViewController.swift */,
 				712BAAA11EC30DC30092932E /* diaryViewController.swift */,
+				712BAA921EB83F400092932E /* MapViewController.swift */,
 				7195E7AF1ED30A5C000A360F /* AppleMapViewController.swift */,
 			);
 			name = View;

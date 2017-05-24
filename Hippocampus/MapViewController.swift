@@ -15,13 +15,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
+    var currentLocation = CLLocation()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        getLocationFromAddress(Diary_Location)
-
+        // 配置 locationManager
+        locationManager.delegate = self;
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
+        
+//        currentLocation = locationManager.location!
+        
     }
 
 
@@ -29,13 +37,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func loadView() {
         
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
         
-        let camera = GMSCameraPosition.camera(withLatitude: 25.013502, longitude: 121.541151, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         view = mapView
