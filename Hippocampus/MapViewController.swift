@@ -43,54 +43,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
         var lat : Double = 0.0
         var lon : Double = 0.0
-        var address = "台北市大安區溫州街16巷3號"
-            
-        do {
-                
-            let url = String(format: "https://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", (address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!))
-            let result = try Data(contentsOf: URL(string: url)!)
-            let json = JSON(data: result)
-                
-            lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
-            lon = json["results"][0]["geometry"]["location"]["lng"].doubleValue
-                
-        }
-        catch let error{
-            print(error)
-        }
-
-            
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.tracksInfoWindowChanges = true
-        marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        marker.title = "Taipei"
-        marker.snippet = "NTUST"
-        marker.map = mapView
+        let address: [String] = ["台北市大安區溫州街16巷3號","台北市大安區基隆路四段43號"]
         
-        address = "台北市大安區基隆路四段43號"
-        
-        do {
-            
-            let url = String(format: "https://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", (address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!))
-            let result = try Data(contentsOf: URL(string: url)!)
-            let json = JSON(data: result)
-            
-            lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
-            lon = json["results"][0]["geometry"]["location"]["lng"].doubleValue
-            
-        }
-        catch let error{
-            print(error)
-        }
+        for i in address{
 
-        let marker2 = GMSMarker()
-        marker2.tracksInfoWindowChanges = true
-        marker2.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        marker2.title = "Taipei"
-        marker2.snippet = "NTUST"
-        marker2.map = mapView
-
+            do {
+                
+                let url = String(format: "https://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", (i.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!))
+                let result = try Data(contentsOf: URL(string: url)!)
+                let json = JSON(data: result)
+                
+                lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
+                lon = json["results"][0]["geometry"]["location"]["lng"].doubleValue
+                
+            }
+            catch let error{
+                print(error)
+            }
+            
+            
+            // Creates a marker in the center of the map.
+            let marker = GMSMarker()
+            marker.tracksInfoWindowChanges = true
+            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
+            marker.title = "Taipei"
+            marker.snippet = "NTUST"
+            marker.map = mapView
+        }
     
     }
 }

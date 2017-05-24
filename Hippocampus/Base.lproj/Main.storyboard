@@ -295,25 +295,6 @@
             </objects>
             <point key="canvasLocation" x="1319" y="1896"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="PcP-WC-89c">
-            <objects>
-                <viewController id="HKq-hl-4jl" customClass="MapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lb9-Fp-wFT"/>
-                        <viewControllerLayoutGuide type="bottom" id="r5y-p3-SrT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IIc-9E-J5N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="470-4d-FsT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R4e-PY-byN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3665" y="1227"/>
-        </scene>
         <!--Diary View Controller-->
         <scene sceneID="xSg-Sa-Zv3">
             <objects>
@@ -392,7 +373,6 @@
                         <segue destination="Lh2-G4-nNo" kind="relationship" relationship="viewControllers" id="scs-pt-suX"/>
                         <segue destination="wog-7J-icO" kind="relationship" relationship="viewControllers" id="hVC-HG-yUi"/>
                         <segue destination="jYg-oM-bdK" kind="relationship" relationship="viewControllers" id="pvd-7k-aFx"/>
-                        <segue destination="HKq-hl-4jl" kind="relationship" relationship="viewControllers" id="Xv8-Pb-4uZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT6-7K-byd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,7 +383,7 @@
         <scene sceneID="vhn-om-zNR">
             <objects>
                 <navigationController id="1pf-Y6-MUh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RkJ-tY-aGb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RkJ-tY-aGb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.40610730351534946" green="0.73693289974060916" blue="0.45430996727855438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -520,7 +500,7 @@
         <!--Map-->
         <scene sceneID="WY2-dM-RQA">
             <objects>
-                <viewController id="jYg-oM-bdK" customClass="AppleMapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jYg-oM-bdK" customClass="MapViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rGL-UI-t1i"/>
                         <viewControllerLayoutGuide type="bottom" id="uOb-MX-cTT"/>
@@ -528,18 +508,9 @@
                     <view key="view" contentMode="scaleToFill" id="CNy-xq-QW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="acF-y3-zmE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="560"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="ic_pin_drop" id="noQ-e4-M0p" userLabel="Item 4"/>
-                    <connections>
-                        <outlet property="mapView" destination="acF-y3-zmE" id="hbx-eo-p6h"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZm-NF-9Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
