@@ -12,10 +12,11 @@ import FirebaseAuth
 
 var ref: FIRDatabaseReference!
 
-class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UIPickerViewDelegate, UIPickerViewDataSource  {
+class PlusViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,  UIPickerViewDelegate, UIPickerViewDataSource  {
     
     
     let toolBar = UIToolbar()
+    private var isKeyboardShown = false
     
     
 
@@ -26,7 +27,7 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.EnterDairy.delegate = self
+        EnterDairy.delegate = self
         
         ref = FIRDatabase.database().reference().child("diary")
         
@@ -35,11 +36,6 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
         createDate()
         
         createWeather()
-        
-        createTag()
-        
-        createLocation()
-        
         
     }
     
@@ -51,23 +47,34 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     // 設定delegate 為self後，可以自行增加delegate protocol
     
     // 開始進入編輯狀態
-    func textFieldDidBeginEditing(textField: UITextField){
+    func textFieldDidBeginEditing(_ textField: UITextField){
         
     }
     
     // 可能進入結束編輯狀態
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
     
     // 結束編輯狀態(意指完成輸入或離開焦點)
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        locationBtn = textField
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         textField.resignFirstResponder()
         return true
     }
+    
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if(text == "\n") {
+//            textView.resignFirstResponder()
+//            return false
+//        }
+//        return true
+//    }
+    
+    
 
     
     
@@ -113,7 +120,7 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     
     func updateDateForTextField(isDoneBtnClicked: Bool) {
         
-        EnterDairy.text = dateFormatter.string(from: DatePicker.date)
+        //EnterDairy.text = dateFormatter.string(from: DatePicker.date)
         DateBtn.text = dateFormatter.string(from: DatePicker.date)
         //Diary_Date = DatePicker.date
     }
@@ -228,14 +235,6 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     
     var tag = [String]()
     
-    func createTag(){
-        
-        if( !Diary_Tag.contains(tagBtn.text!) ){
-            Diary_Tag.append(tagBtn.text!)
-        }
-    }
-    
-    
 //////////////////////////////////////////////////////
     
     
@@ -244,15 +243,13 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     @IBOutlet weak var locationBtn: UITextField!
     var location = [String]()
     
+//////////////////////////////////////////////////////
     
-    func createLocation(){
-        
-        if (!Diary_Location.contains(locationBtn.text!)){
-            Diary_Location.append(locationBtn.text!)
-        }
-    }
+    //title
     
     
+    
+    @IBOutlet weak var titleBtn: UITextField!
     
     
 //////////////////////////////////////////////////////
@@ -278,6 +275,7 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     func data(){
         let key = ref.childByAutoId().key
         let diary: [String: Any] = [
+            "title":titleBtn.text!,
             "content":EnterDairy.text,
             "date":DateBtn.text!,
             //"image":myImage.image!,
@@ -319,6 +317,7 @@ class PlusViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
         DateBtn.text = ""
         weatherbtn.text = ""
         locationBtn.text = ""
+        titleBtn.text = ""
         tagBtn.text = ""
     }
    

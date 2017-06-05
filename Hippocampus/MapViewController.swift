@@ -10,12 +10,14 @@
 import UIKit
 import GoogleMaps
 import SwiftyJSON
+import Firebase
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
     var currentLocation = CLLocation()
+    var sheet = [diary]()
     
 
     override func viewDidLoad() {
@@ -28,7 +30,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
         
-//        currentLocation = locationManager.location!
+        
+        
+        ref = FIRDatabase.database().reference().child("diary")
+        ref.observe(FIRDataEventType.value, with:{(snapshot) in
+            if snapshot.childrenCount>0
+            {
+                self.sheet.removeAll()
+                
+                for d in snapshot.children.allObjects as![FIRDataSnapshot]
+                {
+                    let sheetOjbect = d.value as? [String: AnyObject]
+                    let sheettitle = sheetOjbect?["title"] as! String?
+                    let sheetdate = sheetOjbect?["date"] as! String?
+                    let sheetcomment = sheetOjbect?["comment"] as! String?
+                    let sheetlocation = sheetOjbect?["location"] as! String?
+                    let sheetweather = sheetOjbect?["weather"] as! String?
+                    let sheettag = sheetOjbect?["tag"] as! String?
+                    let sheetdata = diary(title: sheettitle, date: sheetdate, comment: sheetcomment, location: sheetlocation, weather: sheetweather, tag: sheettag)
+                    self.sheet.append(sheetdata)
+                }
+            }
+        })
+        print("=================================")
+        print(sheet.count)
+        print("=================================")
+
         
     }
 
@@ -51,7 +78,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
         var lat : Double = 0.0
         var lon : Double = 0.0
-        let address: [String] = ["台北市大安區溫州街16巷3號","台北市大安區基隆路四段43號"]
+        var address = [String]()
+        
+        for j in stride(from: 0, to: sheet.count, by: 1){
+            address.append(sheet[j].location!)
+            print(sheet[j].location!)
+        }
         
         for i in address{
 

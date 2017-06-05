@@ -1,18 +1,17 @@
 //
-//  TagTableViewCell.swift
+//  TagTodoTableViewCell.swift
 //  Hippocampus
 //
-//  Created by Eileen on 2017/5/10.
+//  Created by Eileen on 2017/6/5.
 //  Copyright © 2017年 Eileen. All rights reserved.
 //
 
 import UIKit
 
-class TagTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var tagTitle: UILabel!
+class TagTodoTableViewCell: UITableViewCell {
     
-       
+    @IBOutlet weak var tagTodoTitle: UILabel!
+    @IBOutlet weak var tagTodoDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

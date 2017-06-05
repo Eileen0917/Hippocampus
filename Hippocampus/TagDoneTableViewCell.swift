@@ -1,5 +1,5 @@
 //
-//  selectTagTableViewCell.swift
+//  TagTableViewCell.swift
 //  Hippocampus
 //
 //  Created by Eileen on 2017/5/10.
@@ -8,8 +8,14 @@
 
 import UIKit
 
-class selectTagTableViewCell: UITableViewCell {
+class TagDoneTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var tagTitle: UILabel!
+    @IBOutlet weak var tagDate: UILabel!
+    
+       
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
