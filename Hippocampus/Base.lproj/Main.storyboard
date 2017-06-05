@@ -235,59 +235,70 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avc-WB-aW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Lfx-hw-D3e"/>
             </objects>
             <point key="canvasLocation" x="1325.5999999999999" y="1965.9670164917543"/>
         </scene>
-        <!--Todo List-->
-        <scene sceneID="Ajq-pC-Djg">
+        <!--Tag Todo Table View Controller-->
+        <scene sceneID="aTf-DI-QwM">
             <objects>
-                <tableViewController title="Todo List" id="sfD-k7-Vdt" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Cu-02-lMf">
+                <viewController id="6A6-9t-IL3" customClass="TagTodoTableViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hZa-B9-AJz"/>
+                        <viewControllerLayoutGuide type="bottom" id="jxJ-v5-BgA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gTh-Ln-Me8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.90627499469999995" green="1" blue="0.95737466019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexColor" red="0.90627499469999995" green="1" blue="0.95737466019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagTodoCell" textLabel="dI9-cC-p8Z" style="IBUITableViewCellStyleDefault" id="fzX-oH-jdq" customClass="TagTodoTableViewCell" customModule="Hippocampus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fzX-oH-jdq" id="ufG-ba-y8c">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dI9-cC-p8Z">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c3p-eH-a4X">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagTodoCell" textLabel="f07-rv-NpW" style="IBUITableViewCellStyleDefault" id="QhY-90-Zyu" customClass="TagTodoTableViewCell" customModule="Hippocampus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QhY-90-Zyu" id="Bd4-4M-jo9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="2017-04-05 14:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v36-hJ-uva">
-                                            <rect key="frame" x="215" y="0.0" width="150" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f07-rv-NpW">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="2017-05-06 14:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crv-hv-0xC">
+                                                    <rect key="frame" x="211" y="0.0" width="153" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tagTodoDate" destination="crv-hv-0xC" id="dak-Mk-dpl"/>
+                                            <outlet property="tagTodoTitle" destination="f07-rv-NpW" id="0vx-pc-Yuo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="tagTodoDate" destination="v36-hJ-uva" id="9Xe-yw-je9"/>
-                                    <outlet property="tagTodoTitle" destination="dI9-cC-p8Z" id="fU1-5h-0DA"/>
+                                    <outlet property="dataSource" destination="6A6-9t-IL3" id="62R-Jm-iiT"/>
+                                    <outlet property="delegate" destination="6A6-9t-IL3" id="YVR-Cg-yp3"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="sfD-k7-Vdt" id="Bty-tF-1kR"/>
-                            <outlet property="delegate" destination="sfD-k7-Vdt" id="YL5-gX-MEB"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="clw-Fy-pu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="c3p-eH-a4X" id="UnA-hV-7GL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsB-HW-L0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069.5999999999999" y="1965.9670164917543"/>
+            <point key="canvasLocation" x="2088.8000000000002" y="1965.9670164917543"/>
         </scene>
         <!--Tag-->
         <scene sceneID="HeA-fK-PzS">
@@ -337,7 +348,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="sfD-k7-Vdt" kind="show" id="4Iv-ZM-mwp"/>
+                                            <segue destination="6A6-9t-IL3" kind="show" id="Qtm-hW-2ar"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -349,6 +360,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Tag" image="ic_local_offer" id="oMS-ME-8MT"/>
+                    <navigationItem key="navigationItem" id="fg2-4o-3mC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcW-gV-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

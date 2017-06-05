@@ -18,6 +18,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var currentLocation = CLLocation()
     var sheet = [diary]()
+    var lat : Double = 0.0
+    var lon : Double = 0.0
     
 
     override func viewDidLoad() {
@@ -30,8 +32,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
         
+        let camera = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 15.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        view = mapView
         
-        
+        //從 firebase 上讀取資料
         ref = FIRDatabase.database().reference().child("diary")
         ref.observe(FIRDataEventType.value, with:{(snapshot) in
             if snapshot.childrenCount>0
@@ -40,23 +46,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 
                 for d in snapshot.children.allObjects as![FIRDataSnapshot]
                 {
-                    let sheetOjbect = d.value as? [String: AnyObject]
-                    let sheettitle = sheetOjbect?["title"] as! String?
-                    let sheetdate = sheetOjbect?["date"] as! String?
-                    let sheetcomment = sheetOjbect?["comment"] as! String?
-                    let sheetlocation = sheetOjbect?["location"] as! String?
-                    let sheetweather = sheetOjbect?["weather"] as! String?
-                    let sheettag = sheetOjbect?["tag"] as! String?
-                    let sheetdata = diary(title: sheettitle, date: sheetdate, comment: sheetcomment, location: sheetlocation, weather: sheetweather, tag: sheettag)
-                    self.sheet.append(sheetdata)
+                    let sheetOjbect = d.value as! [String: Any]
+                    
+                    let sheetdate = sheetOjbect["date"] as! String
+                    let sheetlocation = sheetOjbect["location"] as! String
+                    let sheettitle = sheetOjbect["title"] as! String
+                    
+                    
+                    //地址轉經緯度
+                    do {
+                        
+                        let url = String(format: "https://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", (sheetlocation.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed))!)
+                        let result = try Data(contentsOf: URL(string: url)!)
+                        let json = JSON(data: result)
+                        
+                        self.lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
+                        self.lon = json["results"][0]["geometry"]["location"]["lng"].doubleValue
+                        
+                    }
+                    catch let error{
+                        print(error)
+                    }
+                    
+                    
+                    // Creates a marker in the center of the map.
+                    let marker = GMSMarker()
+                    marker.tracksInfoWindowChanges = true
+                    marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.lat), longitude: CLLocationDegrees(self.lon))
+                    marker.title = sheettitle
+                    marker.snippet = sheetdate
+                    marker.map = mapView
+                    
                 }
-            }
-        })
-        print("=================================")
-        print(sheet.count)
-        print("=================================")
 
-        
+            }
+                
+        })
     }
 
 
@@ -65,52 +90,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    override func loadView() {
-        
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        
-        let camera = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 15.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
-        
-            
-        var lat : Double = 0.0
-        var lon : Double = 0.0
-        var address = [String]()
-        
-        for j in stride(from: 0, to: sheet.count, by: 1){
-            address.append(sheet[j].location!)
-            print(sheet[j].location!)
-        }
-        
-        for i in address{
-
-            do {
-                
-                let url = String(format: "https://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", (i.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!))
-                let result = try Data(contentsOf: URL(string: url)!)
-                let json = JSON(data: result)
-                
-                lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
-                lon = json["results"][0]["geometry"]["location"]["lng"].doubleValue
-                
-            }
-            catch let error{
-                print(error)
-            }
-            
-            
-            // Creates a marker in the center of the map.
-            let marker = GMSMarker()
-            marker.tracksInfoWindowChanges = true
-            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-            marker.title = "Taipei"
-            marker.snippet = "NTUST"
-            marker.map = mapView
-        }
-    
-    }
 }
 

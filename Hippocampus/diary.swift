@@ -22,6 +22,7 @@ import Foundation
     
 //}
 
+var global_sheet = [diary]()
 
 class diary
 {
