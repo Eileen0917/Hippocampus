@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
 var ref: FIRDatabaseReference!
 
@@ -65,16 +66,6 @@ class PlusViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         textField.resignFirstResponder()
         return true
     }
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if(text == "\n") {
-//            textView.resignFirstResponder()
-//            return false
-//        }
-//        return true
-//    }
-    
-    
 
     
     
@@ -266,9 +257,22 @@ class PlusViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
 
     @IBAction func btnSave(_ sender: UIButton) {
         
-        data()
-        simpleHint()
-        clear()
+        if (DateBtn.text == ""){
+            let date = Date()
+            let result = dateFormatter.string(from: date)
+            DateBtn.text = result
+        }
+        
+        if (titleBtn.text == "" || locationBtn.text == ""){
+            simpleHint(t: "Error", m: "You must entry title and location.")
+        }
+        else{
+            data()
+            simpleHint(t: "Confirm", m:"Your diary is saved.")
+            clear()
+        }
+        
+        
         
     }
     
@@ -287,11 +291,11 @@ class PlusViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         
     }
     
-    func simpleHint() {
+    func simpleHint(t: String, m: String) {
         // 建立一個提示框
         let alertController = UIAlertController(
-            title: "Confirm",
-            message: "Your Diary is stored.",
+            title: t,
+            message: m,
             preferredStyle: .alert)
         
         // 建立[確認]按鈕

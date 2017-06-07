@@ -217,6 +217,7 @@
                                         <connections>
                                             <outlet property="tagDate" destination="SoB-nC-Dco" id="Gqc-hI-NaG"/>
                                             <outlet property="tagTitle" destination="WgT-c3-ck5" id="VfV-Js-2D2"/>
+                                            <segue destination="4gy-bJ-1g8" kind="show" id="f6C-2A-jEv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -281,6 +282,7 @@
                                         <connections>
                                             <outlet property="tagTodoDate" destination="crv-hv-0xC" id="dak-Mk-dpl"/>
                                             <outlet property="tagTodoTitle" destination="f07-rv-NpW" id="0vx-pc-Yuo"/>
+                                            <segue destination="4gy-bJ-1g8" kind="show" id="U25-FT-ZJK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -369,7 +371,7 @@
         <!--Diary View Controller-->
         <scene sceneID="xSg-Sa-Zv3">
             <objects>
-                <viewController id="4gy-bJ-1g8" customClass="diaryViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="readDiary" id="4gy-bJ-1g8" customClass="DiaryViewController" customModule="Hippocampus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="siD-1d-Ogq"/>
                         <viewControllerLayoutGuide type="bottom" id="r7N-e3-a0g"/>
@@ -379,7 +381,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-pO-TBl">
-                                <rect key="frame" x="1" y="200" width="375" height="322"/>
+                                <rect key="frame" x="1" y="147" width="375" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.18985720419999999" green="0.39857630080000001" blue="0.26584060310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -387,44 +389,55 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yIo-SV-Cfi">
-                                <rect key="frame" x="0.0" y="521" width="375" height="39"/>
+                                <rect key="frame" x="0.0" y="496" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weather" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HV-Mt-3H5">
-                                <rect key="frame" x="1" y="558" width="177" height="30"/>
+                                <rect key="frame" x="0.0" y="543" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1GW-DW-UUn">
-                                <rect key="frame" x="186" y="558" width="189" height="30"/>
+                                <rect key="frame" x="185" y="543" width="189" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wN-fx-leT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uoJ-HI-msi">
-                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="580" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-JB-uLS">
+                                <rect key="frame" x="0.0" y="72" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="comment" destination="lbm-pO-TBl" id="i3z-66-s4e"/>
+                        <outlet property="dtitle" destination="FYx-JB-uLS" id="C1J-n2-hb9"/>
+                        <outlet property="location" destination="yIo-SV-Cfi" id="Sqx-cW-ges"/>
+                        <outlet property="tag" destination="1GW-DW-UUn" id="XfT-If-r0s"/>
+                        <outlet property="text" destination="uoJ-HI-msi" id="fDo-Ho-aLL"/>
+                        <outlet property="weather" destination="6HV-Mt-3H5" id="QDz-lZ-Klz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX7-d4-IGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="1930"/>
+            <point key="canvasLocation" x="565.60000000000002" y="1965.9670164917543"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Zji-Nw-dnu">
@@ -479,25 +492,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eq0-Zw-aDF">
-                                <rect key="frame" x="1" y="178" width="375" height="286"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eq0-Zw-aDF">
+                                <rect key="frame" x="1" y="206" width="375" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.18985720419999999" green="0.39857630080000001" blue="0.26584060310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.18800640106201172" green="0.39856225252151489" blue="0.26652663946151733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWQ-a1-oeN">
                                 <rect key="frame" x="-1" y="131" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weather" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMR-3w-qQm">
                                 <rect key="frame" x="-1" y="168" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -513,7 +526,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dws-op-oGW">
-                                <rect key="frame" x="0.0" y="444" width="375" height="174"/>
+                                <rect key="frame" x="275" y="525" width="100" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-Lv-cmm">
@@ -529,7 +542,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rC-oS-zwj">
                                 <rect key="frame" x="156" y="168" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -547,14 +560,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGp-7k-tTM">
                                 <rect key="frame" x="-1" y="95" width="377" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-By-fmm">
                                 <rect key="frame" x="288" y="168" width="87" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1880064011" green="0.39856225249999999" blue="0.2665266395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -602,4 +615,7 @@
         <image name="ic_pin_drop" width="24" height="24"/>
         <image name="ic_today" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="U25-FT-ZJK"/>
+    </inferredMetricsTieBreakers>
 </document>

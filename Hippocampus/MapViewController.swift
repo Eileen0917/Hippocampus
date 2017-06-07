@@ -78,9 +78,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     marker.map = mapView
                     
                 }
-
             }
-                
         })
     }
 

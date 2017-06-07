@@ -8,22 +8,6 @@
 
 import Foundation
 
-
-// diary var
-
-//class diary {
-    
-//    var Diary_Date = String()
-//    var Diary_Comment = String()
-//    var Diary_Location = [String()]
-//    var Diary_Weather = String()
-//    var Diary_Tag = [String()]
-//    //var Dairy_Image = Image()
-    
-//}
-
-var global_sheet = [diary]()
-
 class diary
 {
     var title: String?
@@ -45,5 +29,12 @@ class diary
         self.tag = tag;
     }
 }
+
+var d_comment: String?
+var d_location: String?
+var d_weather: String?
+var d_tag: String?
+var d_date: String?
+var d_title: String?
 
 

@@ -70,4 +70,21 @@ class TagTodoTableViewController: UIViewController, UITableViewDelegate, UITable
         
         return cell
     }
+    
+    //選了一篇
+    //delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let sheetdata: diary
+        sheetdata = sheet[indexPath.row]
+        
+        d_comment = sheetdata.comment
+        d_location = sheetdata.location
+        d_weather = sheetdata.weather
+        d_tag = sheetdata.tag
+        d_date = sheetdata.date
+        d_title = sheetdata.title
+        
+    }
+
 }

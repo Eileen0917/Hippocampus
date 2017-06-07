@@ -1,5 +1,5 @@
 //
-//  diaryViewController.swift
+//  DiaryViewController.swift
 //  Hippocampus
 //
 //  Created by Eileen on 2017/5/10.
@@ -8,10 +8,25 @@
 
 import UIKit
 
-class diaryViewController: UIViewController {
-
+class DiaryViewController: UIViewController {
+    @IBOutlet weak var comment: UITextView!
+    @IBOutlet weak var location: UITextField!
+    @IBOutlet weak var weather: UITextField!
+    @IBOutlet weak var tag: UITextField!
+    @IBOutlet weak var text: UITextField!
+    @IBOutlet weak var dtitle: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        comment.text = d_comment
+        location.text = d_location
+        weather.text = d_weather
+        tag.text = d_tag
+        text.text = d_date
+        dtitle.text = d_title
+        
+        
 
         // Do any additional setup after loading the view.
     }
